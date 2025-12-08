@@ -11,6 +11,8 @@ build/
 # Output files
 output_*.txt
 test_output_*.txt
+demo_output_*.txt
+ejemplo_salida.txt
 
 # IDEs
 .vscode/
