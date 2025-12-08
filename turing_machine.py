@@ -163,7 +163,7 @@ class TuringMachine:
         
         return self.state not in [self.accept_state, self.reject_state]
     
-    def run(self, max_steps: int = 10000) -> bool:
+    def run(self, max_steps: int = 1000000) -> bool:
         """
         Ejecuta la máquina de Turing hasta que se detenga o alcance el máximo de pasos
         Retorna True si acepta, False si rechaza
