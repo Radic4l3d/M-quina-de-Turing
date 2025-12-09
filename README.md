@@ -10,11 +10,11 @@ El lenguaje consiste en cadenas donde hay exactamente el mismo número de 0s seg
 
 ## Características
 
-- ✅ Reconoce el lenguaje {0^n1^n | n >= 1}
-- ✅ Acepta cadenas de hasta 1000 caracteres
-- ✅ Genera archivos de salida con descripciones instantáneas de cada paso
-- ✅ Animación visual para cadenas ≤ 10 caracteres
-- ✅ Modo interactivo y modo de prueba automático
+- [x] Reconoce el lenguaje {0^n1^n | n >= 1}
+- [x] Acepta cadenas de hasta 1000 caracteres
+- [x] Genera archivos de salida con descripciones instantáneas de cada paso
+- [x] Animación visual para cadenas ≤ 10 caracteres
+- [x] Modo interactivo y modo de prueba automático
 
 ## Requisitos
 
@@ -68,117 +68,3 @@ El programa genera archivos de texto con el formato `output_<cadena>.txt` que co
 ### Ejemplo de Salida
 
 ```
-================================================================================
-MÁQUINA DE TURING - Reconocedor del lenguaje {0^n1^n | n >= 1}
-================================================================================
-
-Cadena de entrada: 0011
-Longitud: 4
-Resultado: ACEPTADA
-Total de pasos: 19
-
-================================================================================
-DESCRIPCIÓN INSTANTÁNEA DE CADA PASO
-================================================================================
-
-Paso 0:
-  Descripción instantánea: Bq00011B
-  Estado: q0
-  Posición del cabezal: 1
-  Símbolo leído: 0
-  Cinta: B0011B
-
-...
-```
-
-## Algoritmo de la Máquina de Turing
-
-### Estados
-
-- **q0**: Estado inicial - verifica que la cadena empiece con 0
-- **q1**: Busca el primer 1 sin marcar
-- **q2**: Regresa al inicio de la cinta
-- **q3**: Busca el siguiente 0 sin marcar
-- **q4**: Verificación final - comprueba que solo haya marcas
-- **qa**: Estado de aceptación
-- **qr**: Estado de rechazo
-
-### Símbolos
-
-- **0, 1**: Símbolos de entrada
-- **X**: Marca un 0 procesado
-- **Y**: Marca un 1 procesado
-- **B**: Símbolo en blanco (blank)
-
-### Funcionamiento
-
-1. Marca el primer 0 con X
-2. Busca y marca el primer 1 con Y
-3. Regresa al inicio
-4. Repite los pasos 1-3 hasta procesar todos los símbolos
-5. Verifica que solo queden marcas X e Y (sin 0s o 1s sin marcar)
-6. Acepta si la verificación es exitosa, rechaza en caso contrario
-
-## Animación
-
-Para cadenas de 10 caracteres o menos, el programa puede mostrar una animación visual paso a paso que incluye:
-
-- Estado actual
-- Descripción instantánea
-- Visualización de la cinta con el cabezal marcado
-- Pausa entre pasos para seguir la ejecución
-
-Ejemplo de visualización:
-
-```
---- Paso 2 ---
-Estado: q1
-Descripción instantánea: BX0q111B
-Cinta:  B  X  0 [1] 1  B 
-                  ^
-                 (cabezal)
-```
-
-## Ejemplos de Uso
-
-### Ejemplo 1: Cadena Válida
-
-```bash
-$ python3 turing_machine.py
-Seleccione una opción (1 o 2): 1
-Ingrese la cadena: 0011
-
-Procesando cadena: '0011'
-Resultado: ACEPTADA
-Salida guardada en: output_0011.txt
-```
-
-### Ejemplo 2: Cadena Inválida
-
-```bash
-$ python3 turing_machine.py
-Seleccione una opción (1 o 2): 1
-Ingrese la cadena: 001
-
-Procesando cadena: '001'
-Resultado: RECHAZADA
-Salida guardada en: output_001.txt
-```
-
-## Estructura del Proyecto
-
-```
-M-quina-de-Turing/
-│
-├── README.md                    # Este archivo
-├── turing_machine.py            # Implementación principal
-└── test_turing_machine.py       # Suite de pruebas
-```
-
-## Autor
-
-Implementación basada en el ejercicio 8.2 del libro "Introduction to Automata Theory, Languages, and Computation" de John Hopcroft (segunda edición).
-
-## Licencia
-
-Este proyecto es de código abierto y está disponible bajo licencia MIT.
