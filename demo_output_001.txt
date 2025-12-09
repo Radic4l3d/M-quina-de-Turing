@@ -1,0 +1,93 @@
+================================================================================
+MÁQUINA DE TURING - Reconocedor del lenguaje {0^n1^n | n >= 1}
+================================================================================
+
+Cadena de entrada: 001
+Longitud: 3
+Resultado: RECHAZADA
+Total de pasos: 10
+
+================================================================================
+DESCRIPCIÓN INSTANTÁNEA DE CADA PASO
+================================================================================
+
+Paso 0:
+  Descripción instantánea: Bq0001B
+  Estado: q0
+  Posición del cabezal: 1
+  Símbolo leído: 0
+  Cinta: B001B
+
+Paso 1:
+  Descripción instantánea: BXq101B
+  Estado: q1
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX01B
+
+Paso 2:
+  Descripción instantánea: BX0q11B
+  Estado: q1
+  Posición del cabezal: 3
+  Símbolo leído: 1
+  Cinta: BX01B
+
+Paso 3:
+  Descripción instantánea: BXq20YB
+  Estado: q2
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX0YB
+
+Paso 4:
+  Descripción instantánea: Bq2X0YB
+  Estado: q2
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BX0YB
+
+Paso 5:
+  Descripción instantánea: q2BX0YB
+  Estado: q2
+  Posición del cabezal: 0
+  Símbolo leído: B
+  Cinta: BX0YB
+
+Paso 6:
+  Descripción instantánea: Bq3X0YB
+  Estado: q3
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BX0YB
+
+Paso 7:
+  Descripción instantánea: BXq30YB
+  Estado: q3
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX0YB
+
+Paso 8:
+  Descripción instantánea: BXXq1YB
+  Estado: q1
+  Posición del cabezal: 3
+  Símbolo leído: Y
+  Cinta: BXXYB
+
+Paso 9:
+  Descripción instantánea: BXXYq1B
+  Estado: q1
+  Posición del cabezal: 4
+  Símbolo leído: B
+  Cinta: BXXYB
+
+Paso 10:
+  Descripción instantánea: BXXYqrB
+  Estado: qr
+  Posición del cabezal: 4
+  Símbolo leído: B
+  Cinta: BXXYB
+
+================================================================================
+ESTADO FINAL: RECHAZADA
+================================================================================

@@ -1,0 +1,37 @@
+================================================================================
+MÁQUINA DE TURING - Reconocedor del lenguaje {0^n1^n | n >= 1}
+================================================================================
+
+Cadena de entrada: 0
+Longitud: 1
+Resultado: RECHAZADA
+Total de pasos: 2
+
+================================================================================
+DESCRIPCIÓN INSTANTÁNEA DE CADA PASO
+================================================================================
+
+Paso 0:
+  Descripción instantánea: Bq00B
+  Estado: q0
+  Posición del cabezal: 1
+  Símbolo leído: 0
+  Cinta: B0B
+
+Paso 1:
+  Descripción instantánea: BXq1B
+  Estado: q1
+  Posición del cabezal: 2
+  Símbolo leído: B
+  Cinta: BXB
+
+Paso 2:
+  Descripción instantánea: BXqrB
+  Estado: qr
+  Posición del cabezal: 2
+  Símbolo leído: B
+  Cinta: BXB
+
+================================================================================
+ESTADO FINAL: RECHAZADA
+================================================================================

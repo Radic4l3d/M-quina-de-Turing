@@ -1,0 +1,282 @@
+================================================================================
+MÁQUINA DE TURING - Reconocedor del lenguaje {0^n1^n | n >= 1}
+================================================================================
+
+Cadena de entrada: 000111
+Longitud: 6
+Resultado: ACEPTADA
+Total de pasos: 37
+
+================================================================================
+DESCRIPCIÓN INSTANTÁNEA DE CADA PASO
+================================================================================
+
+Paso 0:
+  Descripción instantánea: Bq0000111B
+  Estado: q0
+  Posición del cabezal: 1
+  Símbolo leído: 0
+  Cinta: B000111B
+
+Paso 1:
+  Descripción instantánea: BXq100111B
+  Estado: q1
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX00111B
+
+Paso 2:
+  Descripción instantánea: BX0q10111B
+  Estado: q1
+  Posición del cabezal: 3
+  Símbolo leído: 0
+  Cinta: BX00111B
+
+Paso 3:
+  Descripción instantánea: BX00q1111B
+  Estado: q1
+  Posición del cabezal: 4
+  Símbolo leído: 1
+  Cinta: BX00111B
+
+Paso 4:
+  Descripción instantánea: BX0q20Y11B
+  Estado: q2
+  Posición del cabezal: 3
+  Símbolo leído: 0
+  Cinta: BX00Y11B
+
+Paso 5:
+  Descripción instantánea: BXq200Y11B
+  Estado: q2
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX00Y11B
+
+Paso 6:
+  Descripción instantánea: Bq2X00Y11B
+  Estado: q2
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BX00Y11B
+
+Paso 7:
+  Descripción instantánea: q2BX00Y11B
+  Estado: q2
+  Posición del cabezal: 0
+  Símbolo leído: B
+  Cinta: BX00Y11B
+
+Paso 8:
+  Descripción instantánea: Bq3X00Y11B
+  Estado: q3
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BX00Y11B
+
+Paso 9:
+  Descripción instantánea: BXq300Y11B
+  Estado: q3
+  Posición del cabezal: 2
+  Símbolo leído: 0
+  Cinta: BX00Y11B
+
+Paso 10:
+  Descripción instantánea: BXXq10Y11B
+  Estado: q1
+  Posición del cabezal: 3
+  Símbolo leído: 0
+  Cinta: BXX0Y11B
+
+Paso 11:
+  Descripción instantánea: BXX0q1Y11B
+  Estado: q1
+  Posición del cabezal: 4
+  Símbolo leído: Y
+  Cinta: BXX0Y11B
+
+Paso 12:
+  Descripción instantánea: BXX0Yq111B
+  Estado: q1
+  Posición del cabezal: 5
+  Símbolo leído: 1
+  Cinta: BXX0Y11B
+
+Paso 13:
+  Descripción instantánea: BXX0q2YY1B
+  Estado: q2
+  Posición del cabezal: 4
+  Símbolo leído: Y
+  Cinta: BXX0YY1B
+
+Paso 14:
+  Descripción instantánea: BXXq20YY1B
+  Estado: q2
+  Posición del cabezal: 3
+  Símbolo leído: 0
+  Cinta: BXX0YY1B
+
+Paso 15:
+  Descripción instantánea: BXq2X0YY1B
+  Estado: q2
+  Posición del cabezal: 2
+  Símbolo leído: X
+  Cinta: BXX0YY1B
+
+Paso 16:
+  Descripción instantánea: Bq2XX0YY1B
+  Estado: q2
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BXX0YY1B
+
+Paso 17:
+  Descripción instantánea: q2BXX0YY1B
+  Estado: q2
+  Posición del cabezal: 0
+  Símbolo leído: B
+  Cinta: BXX0YY1B
+
+Paso 18:
+  Descripción instantánea: Bq3XX0YY1B
+  Estado: q3
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BXX0YY1B
+
+Paso 19:
+  Descripción instantánea: BXq3X0YY1B
+  Estado: q3
+  Posición del cabezal: 2
+  Símbolo leído: X
+  Cinta: BXX0YY1B
+
+Paso 20:
+  Descripción instantánea: BXXq30YY1B
+  Estado: q3
+  Posición del cabezal: 3
+  Símbolo leído: 0
+  Cinta: BXX0YY1B
+
+Paso 21:
+  Descripción instantánea: BXXXq1YY1B
+  Estado: q1
+  Posición del cabezal: 4
+  Símbolo leído: Y
+  Cinta: BXXXYY1B
+
+Paso 22:
+  Descripción instantánea: BXXXYq1Y1B
+  Estado: q1
+  Posición del cabezal: 5
+  Símbolo leído: Y
+  Cinta: BXXXYY1B
+
+Paso 23:
+  Descripción instantánea: BXXXYYq11B
+  Estado: q1
+  Posición del cabezal: 6
+  Símbolo leído: 1
+  Cinta: BXXXYY1B
+
+Paso 24:
+  Descripción instantánea: BXXXYq2YYB
+  Estado: q2
+  Posición del cabezal: 5
+  Símbolo leído: Y
+  Cinta: BXXXYYYB
+
+Paso 25:
+  Descripción instantánea: BXXXq2YYYB
+  Estado: q2
+  Posición del cabezal: 4
+  Símbolo leído: Y
+  Cinta: BXXXYYYB
+
+Paso 26:
+  Descripción instantánea: BXXq2XYYYB
+  Estado: q2
+  Posición del cabezal: 3
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 27:
+  Descripción instantánea: BXq2XXYYYB
+  Estado: q2
+  Posición del cabezal: 2
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 28:
+  Descripción instantánea: Bq2XXXYYYB
+  Estado: q2
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 29:
+  Descripción instantánea: q2BXXXYYYB
+  Estado: q2
+  Posición del cabezal: 0
+  Símbolo leído: B
+  Cinta: BXXXYYYB
+
+Paso 30:
+  Descripción instantánea: Bq3XXXYYYB
+  Estado: q3
+  Posición del cabezal: 1
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 31:
+  Descripción instantánea: BXq3XXYYYB
+  Estado: q3
+  Posición del cabezal: 2
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 32:
+  Descripción instantánea: BXXq3XYYYB
+  Estado: q3
+  Posición del cabezal: 3
+  Símbolo leído: X
+  Cinta: BXXXYYYB
+
+Paso 33:
+  Descripción instantánea: BXXXq3YYYB
+  Estado: q3
+  Posición del cabezal: 4
+  Símbolo leído: Y
+  Cinta: BXXXYYYB
+
+Paso 34:
+  Descripción instantánea: BXXXYq4YYB
+  Estado: q4
+  Posición del cabezal: 5
+  Símbolo leído: Y
+  Cinta: BXXXYYYB
+
+Paso 35:
+  Descripción instantánea: BXXXYYq4YB
+  Estado: q4
+  Posición del cabezal: 6
+  Símbolo leído: Y
+  Cinta: BXXXYYYB
+
+Paso 36:
+  Descripción instantánea: BXXXYYYq4B
+  Estado: q4
+  Posición del cabezal: 7
+  Símbolo leído: B
+  Cinta: BXXXYYYB
+
+Paso 37:
+  Descripción instantánea: BXXXYYYqaB
+  Estado: qa
+  Posición del cabezal: 7
+  Símbolo leído: B
+  Cinta: BXXXYYYB
+
+================================================================================
+ESTADO FINAL: ACEPTADA
+================================================================================

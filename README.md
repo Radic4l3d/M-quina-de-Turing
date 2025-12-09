@@ -13,6 +13,12 @@ Con la tabla de transiciones Siguiente
 ---
 
 ## Como ejecutar
-- Preparar el entorno: pip install networkx matplotlib
-- Compilar el archivo tm_logic.c: gcc tm_logic.c -o tm_logic
-- Ejecutar el archivo python e ingresar la cadena {0*1*}: python tm_graph.py
+# En Windows:
+```bash
+python turing_anim.py
+```
+
+# En Linux/Mac:
+```bash
+python3 turing_anim.py
+```
