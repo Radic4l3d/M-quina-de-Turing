@@ -10,7 +10,6 @@ typedef enum { q0, q1, q2, q3, q4, REJECT } State;
 
 void print_id(FILE *f, char *tape, int head, State state) {
     int max_print = strlen(tape);
-    // Imprimimos un formato fácil de parsear para Python:
     // FORMATO: ESTADO|INDICE_CABEZA|CINTA_COMPLETA
     fprintf(f, "%d|%d|%s\n", state, head, tape);
 }
@@ -21,7 +20,7 @@ int main(int argc, char *argv[]) {
     int head = 0;
     State current_state = q0;
     
-    // Abrir archivo en modo escritura (borra contenido anterior)
+    // Abrir archivo en modo escritura
     FILE *file = fopen("traza_tm.txt", "w");
     if (file == NULL) return 1;
 
@@ -37,20 +36,20 @@ int main(int argc, char *argv[]) {
     // Inicializar cinta
     memset(tape, BLANK, MAX_LEN);
     strncpy(tape, input, strlen(input));
-    // Importante: asegurar terminación limpia para la visualización
+    // asegurar visualización
     tape[strlen(input)] = '\0'; 
 
     int steps = 0;
-    // Bucle principal de la máquina
+    // Bucle principal
     while (current_state != q4 && current_state != REJECT && steps < 10000) {
         
         // Registrar estado actual antes de mover
         print_id(file, tape, head, current_state);
         
         char symbol = tape[head];
-        if (symbol == '\0') symbol = BLANK; // Tratamiento de fin de cadena como Blanco
+        if (symbol == '\0') symbol = BLANK; // fin de cadena
         
-        // --- LOGICA DE TRANSICION (Igual a tu tabla) ---
+        // LOGICA DE TRANSICION
         switch (current_state) {
             case q0:
                 if (symbol == '0') { tape[head] = 'X'; current_state = q1; head++; }
@@ -78,10 +77,10 @@ int main(int argc, char *argv[]) {
                 current_state = REJECT; break;
         }
         
-        // Si la cabeza se mueve a una zona negativa (crash) o muy lejos, ajustamos o expandimos
+        // Ajustamos o expandimos, si la cabeza se mueve a una zona negativa
         if (head < 0) { current_state = REJECT; }
         if (head >= strlen(tape)) { 
-            // Expandir cinta visualmente si es necesario, añadiendo un B real
+            // Expandir cinta visualmente si es necesario, añadiendo un Blank
             tape[head] = BLANK; 
             tape[head+1] = '\0'; 
         }

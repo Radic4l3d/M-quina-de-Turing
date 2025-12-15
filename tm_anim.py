@@ -2,7 +2,6 @@ import time
 import os
 import sys
 
-# Configuración
 DELAY = 0.5  # Segundos entre pasos
 
 def clear_screen():
@@ -35,7 +34,7 @@ def run_turing_machine(input_str):
         return
 
     # Inicialización
-    tape = list(input_str) + ['B'] * 5 # Padding de blancos
+    tape = list(input_str) + ['B'] * 5  # Añadir blancos al final
     head = 0
     state = 'q0'
     
@@ -44,13 +43,13 @@ def run_turing_machine(input_str):
         time.sleep(DELAY)
         
         # Leer símbolo actual
-        # Si la cabeza sale del array visual, añadimos más blancos dinámicamente
+        # Si la cabeza sale del array, añadimos más blancos
         if head >= len(tape):
             tape.append('B')
         
         symbol = tape[head]
         
-        # Lógica de Transiciones (Idéntica a la tabla)
+        # Lógica de Transiciones
         next_state = 'REJECT'
         write_symbol = symbol
         move = 0 # -1 L, 1 R

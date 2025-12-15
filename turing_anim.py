@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import time
 
-# --- LÓGICA DE LA MÁQUINA DE TURING (Backend) ---
+# LÓGICA DE LA MÁQUINA DE TURING
 class TuringLogic:
     def __init__(self, tape_input):
         self.tape = list(tape_input)
@@ -22,7 +22,7 @@ class TuringLogic:
 
         char_read = self.get_char(self.head)
         
-        # --- Lógica de Transición (Tu tabla) ---
+        # Lógica de Transición
         next_state = 'REJECT'
         write_char = char_read
         move = 0 # -1 L, 1 R
@@ -45,13 +45,13 @@ class TuringLogic:
             if char_read == 'Y':   next_state, write_char, move = 'q3', 'Y', 1
             elif char_read == 'B': next_state, write_char, move = 'q4', 'B', 1
         
-        # Guardar descripción del paso para la UI
+        # Guardar descripción
         move_str = "Der" if move == 1 else "Izq"
         step_desc = f"Estado {self.state}: Lee '{char_read}' → Escribe '{write_char}', Mueve {move_str} → Nuevo {next_state}"
         
         # Ejecutar cambios
         if next_state != 'REJECT':
-            # Expansión dinámica de cinta si es necesario
+            # Expansión de cinta si es necesario
             if self.head >= len(self.tape):
                 self.tape.append('B')
             
@@ -68,7 +68,7 @@ class TuringLogic:
             self.status = "REJECTED"
             return f"Cadena RECHAZADA en estado {self.state} leyendo '{char_read}'"
 
-# --- INTERFAZ GRÁFICA (Frontend - Tkinter) ---
+# INTERFAZ GRÁFICA
 class TuringApp:
     def __init__(self, root):
         self.root = root
@@ -136,10 +136,9 @@ class TuringApp:
     def run_step(self):
         if not self.logic: return
         
-        # Leer velocidad del slider
         delay = 700
         #delay = self.scale_speed.get()
-
+        # Leer velocidad del slider
         if self.is_running and self.logic.status == "RUNNING":
             desc = self.logic.step()
             self.lbl_status.config(text=desc, fg="blue")
@@ -153,7 +152,7 @@ class TuringApp:
                 self.lbl_status.config(text=">>> CADENA RECHAZADA <<<", fg="red")
                 self.is_running = False
 
-        # Programar siguiente frame
+        # Siguiente frame
         if self.logic.status == "RUNNING":
             self.root.after(delay, self.run_step)
 
@@ -167,7 +166,7 @@ class TuringApp:
         y_pos = 70
         
         # Dibujar CINTA (Vista relativa a la cabeza)
-        # Queremos mostrar 6 celdas a la izquierda y 6 a la derecha
+        # 6 celdas a la izquierda y 6 a la derecha
         radius = 6
         head = self.logic.head
         
@@ -194,7 +193,6 @@ class TuringApp:
             self.canvas.create_text((x1+x2)/2, y2 + 15, text=str(tape_idx), font=("Arial", 8), fill="#666")
 
         # Dibujar CABEZA LECTORA (Fija en el centro)
-        # Triángulo apuntando hacia abajo
         head_x = center_x
         head_y = y_pos - 10
         self.canvas.create_polygon(

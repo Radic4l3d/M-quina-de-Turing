@@ -1,0 +1,23 @@
+# --- Archivos Generados por C ---
+# Ignorar el ejecutable (Linux/Mac y Windows)
+tm_logic
+tm_logic.exe
+# Ignorar archivos objeto intermedios (por si acaso)
+*.o
+
+# --- Archivos Generados por la Ejecución ---
+# Ignorar el archivo de trazas y cualquier otro txt generado
+*.txt
+
+# --- Entornos Virtuales y Python ---
+# Ignorar carpeta de entorno virtual (ajusta si le pusiste otro nombre)
+venv/
+env/
+.venv/
+# Ignorar caché de compilación de Python
+__pycache__/
+*.pyc
+
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
